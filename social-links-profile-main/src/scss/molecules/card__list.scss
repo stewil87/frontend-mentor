@@ -1,0 +1,88 @@
+.card__list{
+    padding-top: var(--varSpace-40);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--varSpace-16);
+
+    a{
+        position: relative;
+        font-weight: bold;
+        overflow: hidden;
+        color: var(--varColor-White);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: var(--varSpace-40);
+        border: solid 1px var(--varColor-Grey-800);
+        background-color: var(--varColor-Grey-700);
+        border-radius: var(--varSpace-5);
+        text-decoration: none;
+        transition: all 0.4s ease;
+        cursor: pointer;
+
+        @media screen and (prefers-color-scheme: light) {
+            border: solid 1px var(--varColor-White);
+            background-color: var(--varColor-Black);
+        }
+
+        &:hover, &:focus{
+            color: var(--varColor-Green);
+            background-color: var(--varColor-Grey-600);
+            transition: all 0.4s ease;
+
+            @media screen and (prefers-color-scheme: light) {
+                border-left: solid 1px var(--varColor-Black);
+                border-right: solid 1px var(--varColor-Black);
+            }
+
+            &::before{
+                translate: 0;
+                transition: all 0.4s ease;
+            }
+
+            &::after{
+                translate: 0;
+                transition: all 0.4s ease;
+            }
+        }
+
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            width: var(--varSpace-16);
+            height: var(--varSpace-16);
+        }
+
+        &::before{
+            left: 0;
+            width: 0; 
+            height: 0; 
+            border-top: var(--varSpace-10) solid transparent;
+            border-bottom: var(--varSpace-10) solid transparent;
+            border-left: var(--varSpace-10) solid var(--varColor-Grey-800);
+            transition: all 0.4s ease;
+            translate: calc(-100% - 1px) 0;
+
+            @media screen and (prefers-color-scheme: light) {
+                border-left: var(--varSpace-10) solid var(--varColor-Black);
+            }
+        }
+
+        &::after{
+            right: 0;
+            width: 0; 
+            height: 0; 
+            border-top: var(--varSpace-10) solid transparent;
+            border-bottom: var(--varSpace-10) solid transparent; 
+            border-right:var(--varSpace-10) solid var(--varColor-Grey-800);
+            transition: all 0.4s ease;
+            translate: calc(100% + 1px) 0;
+
+            @media screen and (prefers-color-scheme: light) {
+                border-right: var(--varSpace-10) solid var(--varColor-Black);
+            }
+        }
+    }
+}

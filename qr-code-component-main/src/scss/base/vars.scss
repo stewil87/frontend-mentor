@@ -1,0 +1,27 @@
+$spacing: (
+    500: 40px,
+    300: 24px,
+    200: 16px
+);
+
+$colorSlate: (
+    900: hsl(218deg, 44%, 22%),
+    500: hsl(216deg, 15%, 48%),
+    300: hsl(212deg, 45%, 89%),
+);
+
+:root{
+    --varBaseFont: 'Outfit', Arial, Helvetica, sans-serif;
+    --varBaseBRadius-L: 20px;
+    --varBaseBRadius-S: 10px;
+
+    @each $name, $space in $spacing {
+        --varSpace-#{$name}: #{$space};
+    }
+
+    --varColorWhite: hsl(0deg, 0%, 100%);
+
+    @each $name, $color in $colorSlate {
+        --varColorSlate-#{$name}: #{$color};
+    }
+}

@@ -1,0 +1,116 @@
+@use "sass:map";
+@use "../base" as *;
+
+.card{
+    display: flex;
+    width: min(384px, 100%);
+    padding: var(--varSpace-200);
+    flex-direction: column;
+    gap: var(--varSpace-200);
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid var(--varColor-gray-950);
+    background: var(--varColor-white);
+    box-shadow: 8px 8px 0px 0px #000;
+
+    &__head{
+        border-radius: 10px;
+        background: var(--varColor-yellow);
+        overflow: hidden;
+        line-height: 0;
+
+        @media #{map.get($breakpoints, 'mobile')}{
+            position: relative;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+        gap: var(--varSpace-150);
+    }
+
+    &__footer{
+        display: flex;
+        align-items: center;
+        gap: var(--varSpace-150);
+    }
+
+    h1{
+        a{
+            color: var(--varColor-gray-950);
+            font-size: var(--varSpace-300);
+            font-style: normal;
+            font-weight: 800;
+            line-height: 150%;
+            text-decoration: none;
+            transition: color 0.4s ease;
+            cursor: pointer;
+
+            @media screen and (prefers-reduced-motion) { 
+                transition: unset;
+            }
+
+            @media #{map.get($breakpoints, 'mobile')}{
+                font-size: var(--varSpace-250);
+            }
+
+
+            &:hover, &:active, &:focus{
+                color: var(--varColor-yellow);
+                transition: color 0.4s ease;
+
+                @media screen and (prefers-reduced-motion) { 
+                    transition: unset;
+                }
+            }
+        }
+    }
+
+    p{
+        @media #{map.get($breakpoints, 'mobile')}{
+            font-size: 14px;
+        }
+    }
+
+    .categories{
+        display: flex;
+        gap: var(--varSpace-100);
+        justify-content: flex-start;
+    }
+
+    .date{
+        color: var(--varColor-gray-950);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+
+        @media #{map.get($breakpoints, 'mobile')}{
+            font-size: var(--varSpace-150);
+        }
+    }
+
+    .avatar{
+        width: 32px;
+        line-height: 0;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .author{
+        color: var(--varColor-gray-950);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 150%;
+    }
+}

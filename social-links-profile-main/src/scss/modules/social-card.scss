@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "../base" as *;
+
+.social-card{
+    padding: var(--varSpace-40);
+    border: solid 1px transparent;
+    background-color: var(--varColor-Grey-800);
+    border-radius: var(--varSpace-20);
+    width: min(380px, 100%);
+
+    @media #{map.get($breakpoints, 'mobile')}{
+        padding: var(--varSpace-24);
+    }
+
+    @media screen and (prefers-color-scheme: light) {
+        background-color: var(--varColor-Black);
+        border: solid 1px var(--varColor-White);
+    }
+
+    .card{
+        &__header{
+            display: flex;
+            justify-content: center;
+
+            .avatar{
+                border-radius: 50%;
+                width: 88px;
+                overflow: hidden;
+                line-height: 0;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        &__body{
+            padding-top: var(--varSpace-30);
+        }
+
+        &__list{
+            /*molecules/card__list.scss*/
+        }
+    }
+}

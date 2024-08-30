@@ -1,0 +1,48 @@
+.card{
+    background-color: var(--varColorWhite);
+    border-radius: var(--varBaseBRadius-L);
+    padding: var(--varSpace-200) var(--varSpace-200) var(--varSpace-500) var(--varSpace-200);
+    width: min(320px, 100%);
+    transform: scale(0.5);
+    animation: scaleCard 2s ease forwards;
+    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, .0477);
+
+    @media screen and (prefers-reduced-motion) { 
+        transform: unset;
+        animation: unset;
+    }
+
+    .head{
+        width: 100%;
+        overflow: hidden;
+        border-radius: var(--varBaseBRadius-S);
+        line-height: 0;
+
+        a{
+            display: block;
+            line-height: 0;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .body{
+        text-align: center;
+        padding: var(--varSpace-300) var(--varSpace-200) 0 var(--varSpace-200);
+        display: flex;
+        flex-direction: column;
+        gap: var(--varSpace-200);
+    }
+}
+
+@keyframes scaleCard {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}

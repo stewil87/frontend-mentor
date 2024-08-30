@@ -1,0 +1,51 @@
+$spaces: (
+    '5': 5px,
+    '10': 10px,
+    '16': 16px,
+    '20': 20px,
+    '24': 24px,
+    '30': 30px,
+    '40': 40px,
+);
+
+$colors: (
+    'Green': hsl(75, 94%, 57%),
+    'Grey-600': hsl(0, 0%, 28%),
+    'Grey-700': hsl(0, 0%, 20%),
+    'Grey-800': hsl(0, 0%, 12%),
+    'Grey-900': hsl(0, 0%, 8%),
+    'White': hsl(0, 0%, 100%),
+    'Black': hsl(0, 0%, 0%),
+);
+
+$colorsLight: (
+    'Green': hsl(32.9,100%,50%),
+    'Grey-600': hsl(0, 0%, 28%),
+    'Grey-700': hsl(0, 0%, 20%),
+    'Grey-800': hsl(0, 0%, 12%),
+    'Grey-900': hsl(0, 0%, 8%),
+    'White': hsl(0, 0%, 0%),
+    'Black': hsl(0, 0%, 100%),
+);
+
+$breakpoints: (
+    "mobile": "screen and (max-width: 480px)"
+);
+
+:root{
+    --varBaseFont: 'Inter', Arial, Helvetica, sans-serif;
+
+    @each $name, $space in $spaces {
+        --varSpace-#{$name}: #{$space};
+    }
+
+    @each $name, $color in $colors {
+        --varColor-#{$name}: #{$color};
+    }
+
+    @media screen and (prefers-color-scheme: light) {
+        @each $name, $color in $colorsLight {
+            --varColor-#{$name}: #{$color};
+        }
+    }
+}

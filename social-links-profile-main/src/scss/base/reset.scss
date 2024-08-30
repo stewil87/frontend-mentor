@@ -1,0 +1,30 @@
+*, *::before, *::after{
+    box-sizing: border-box; 
+}
+
+*{
+    margin: 0; 
+    padding: 0;
+
+    @media screen and (prefers-reduced-motion) { 
+        transition: unset !important;
+    }
+}
+
+.img{
+    line-height: 0;
+}
+
+body, html{
+    height: 100%; 
+    scroll-behavior: smooth;
+}
+
+body{
+    position: relative;
+    background-color: var(--varColor-Black);
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--varBaseFont, 'sans-serif');
+    font-size: 14px;
+}

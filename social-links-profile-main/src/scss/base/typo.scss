@@ -1,0 +1,24 @@
+hgroup{
+    display: block;
+    text-align: center;
+}
+
+h1{
+    color: var(--varColor-White);
+    font-size: 1.5rem;
+    padding-bottom: var(--varSpace-16);
+    font-weight: 700;
+}
+
+p{
+    font-weight: 400;
+    padding-top: var(--varSpace-30);
+    color: var(--varColor-White);
+    font-size: 1rem;
+}
+
+span{
+    font-weight: 600;
+    color: var(--varColor-Green);
+    font-size: 1rem;
+}

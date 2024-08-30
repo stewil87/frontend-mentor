@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../base" as *;
+
+.badge{
+    border-radius: var(--varSpace-50);
+    background: var(--varColor-yellow);
+
+    display: flex;
+    padding: var(--varSpace-50) var(--varSpace-150);
+    justify-content: center;
+    align-items: center;
+    gap: var(--varSpace-100);
+
+    color: var(--varColor-gray-950);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 150%;
+
+    @media #{map.get($breakpoints, 'mobile')}{
+        font-size: var(--varSpace-150);
+    }
+}
