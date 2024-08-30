@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../base" as *;
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+
+    @media #{map.get($breakpoints, 'mobile')}{
+    }
+}
